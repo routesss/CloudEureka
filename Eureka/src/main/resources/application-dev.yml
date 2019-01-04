@@ -8,8 +8,8 @@
 server:
   port: 8080
 eureka:
-  datacenter: Avis Cloud   # 修改 http://localhost:8761 地址 Eureka 首页上面 System Status 的 Data center 显示信息
-  environment: PROD         # 修改 http://localhost:8761 地址 Eureka 首页上面 System Status 的 Environment 显示信息
+  datacenter: Sola Cloud   # 修改 http://localhost:8761 地址 Eureka 首页上面 System Status 的 Data center 显示信息
+  environment: DEV         # 修改 http://localhost:8761 地址 Eureka 首页上面 System Status 的 Environment 显示信息
   client:
     register-with-eureka: false
     fetch-registry: false
