@@ -1,5 +1,5 @@
 MyEureka:
-  serverUrl: http://127.0.0.1:8081/eureka/
+  serverUrl: http://127.0.0.1:8080/eureka/
 
 # 配置 eureka 登录密码，输入地址 http://localhost:8761 时候就需要输入这个用户名密码登录进去
 #security:
@@ -9,7 +9,7 @@ MyEureka:
 #    name: admin
 #    password: admin
 server:
-  port: 8080
+  port: 8081
 eureka:
   datacenter: Sola Cloud   # 修改 http://localhost:8761 地址 Eureka 首页上面 System Status 的 Data center 显示信息
   environment: DEV         # 修改 http://localhost:8761 地址 Eureka 首页上面 System Status 的 Environment 显示信息
@@ -17,12 +17,11 @@ eureka:
     register-with-eureka: true            #false不向注册中心注册自己
     fetch-registry: true                  #false不去检索服务
     service-url:
-#      defaultZone: http://admin:admin@localhost:8761/eureka/
       defaultZone: ${MyEureka.serverUrl}
     healthcheck:  # 健康检查
       enabled: true
   instance:
-    hostname: Eureka
+    hostname: Eureka2
     prefer-ip-address: true         #使用ip地址的形式定义注册中心
 
 #  # 配置 eureka 首页的路径
@@ -35,6 +34,3 @@ eureka:
 spring:
   application:
     name: Eureka
-
-
-

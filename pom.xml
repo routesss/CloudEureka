@@ -10,6 +10,7 @@
     <version>1.0-SNAPSHOT</version>
     <modules>
         <module>Eureka</module>
+        <module>Eureka2</module>
     </modules>
 
     <!--springBoot 注:springboot和springCloud有版本冲突的问题-->
