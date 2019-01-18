@@ -1,3 +1,6 @@
+MyEureka:
+  serverUrl: http://127.0.0.1:8081/eureka/
+
 # 配置 eureka 登录密码，输入地址 http://localhost:8761 时候就需要输入这个用户名密码登录进去
 #security:
 #  basic:
@@ -8,23 +11,34 @@
 server:
   port: 8080
 eureka:
-  datacenter: Avis Cloud   # 修改 http://localhost:8761 地址 Eureka 首页上面 System Status 的 Data center 显示信息
-  environment: PROD         # 修改 http://localhost:8761 地址 Eureka 首页上面 System Status 的 Environment 显示信息
+  datacenter: Sola Cloud   # 修改 http://localhost:8761 地址 Eureka 首页上面 System Status 的 Data center 显示信息
+  environment: DEV         # 修改 http://localhost:8761 地址 Eureka 首页上面 System Status 的 Environment 显示信息
   client:
-    register-with-eureka: false
-    fetch-registry: false
+    register-with-eureka: true            #false不向注册中心注册自己
+    fetch-registry: true                  #false不去检索服务
     service-url:
 #      defaultZone: http://admin:admin@localhost:8761/eureka/
-      defaultZone: http://localhost:${server.port}/eureka/
+      defaultZone: ${MyEureka.serverUrl}
     healthcheck:  # 健康检查
       enabled: true
   instance:
+    hostname: Eureka
+    prefer-ip-address: true         #使用ip地址的形式定义注册中心
+  server:
+    enable-self-preservation: true #开启Eureka保护机制
 
 #  # 配置 eureka 首页的路径
 #  dashboard:
 #    enabled: true   # 如果这里配置为 false 的话，那么 Eureka 的首页将无法访问
 #    path: /x        # 默认配置是 / ，但是这里配置成 /x 的话，那么访问的首页路径为: http://localhost:8761/x
 #  # 目前我们这个用处就行，先暂时注释这个，不影响后面的测试用
+
+#服务名称
+spring:
+  application:
+    name: Eureka
+
+
 
 
 

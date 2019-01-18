@@ -24,6 +24,8 @@ eureka:
   instance:
     hostname: Eureka
     prefer-ip-address: true         #使用ip地址的形式定义注册中心
+  server:
+    enable-self-preservation: true #开启Eureka保护机制
 
 #  # 配置 eureka 首页的路径
 #  dashboard:
@@ -35,6 +37,8 @@ eureka:
 spring:
   application:
     name: Eureka
+
+
 
 
 
